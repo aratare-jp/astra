@@ -1,0 +1,13 @@
+testing testing testing {{ name }}
+
+{% protected "<!--" "-->" "bob foo bar baz" %}
+laksdjf;laksjdfl;aksjdf;laksjdf
+asdfasdf
+as->df
+as->dfas
+dfas
+dir-fna
+sdf
+as->dfasdf
+aset-doublef
+{% endprotected %}
