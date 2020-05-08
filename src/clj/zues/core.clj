@@ -1,15 +1,15 @@
-(ns noobies.core
+(ns zues.core
   (:require
-   [clojure.java.io :refer :all]
-   [clojure.string :refer [trim index-of]]
-   [selmer.parser :refer [render-file add-tag!]])
+    [clojure.java.io :refer :all]
+    [clojure.string :refer [trim index-of]]
+    [selmer.parser :refer [render-file add-tag!]])
   (:gen-class))
 
 (def regions (atom {}))
 
 (defn strip-double-quotes [s]
   (let [trimmed (trim s)
-        len (count trimmed)]
+        len     (count trimmed)]
     (subs trimmed 1 (- len 1))))
 
 (defn open-protected-fn [open-protected close-protected id]
@@ -32,17 +32,17 @@
                     id              (strip-double-quotes (nth args 2))
                     content         (get-in raw-content [:protected :content])]
                 (swap! regions assoc-in [id] {:content content
-                                              :open (open-protected-fn open-protected close-protected id)
-                                              :close (close-protected-fn open-protected close-protected id)})
+                                              :open    (open-protected-fn open-protected close-protected id)
+                                              :close   (close-protected-fn open-protected close-protected id)})
                 (fmt-protected-region open-protected close-protected id content)))
             :endprotected)
   (let [old-content (slurp "test.clj")
         new-content (render-file "test.clj.hap" {:name "blah"})]
     (doseq [key (keys @regions)]
-      (let [open-protected             (get-in @regions [key :open])
+      (let [open-protected              (get-in @regions [key :open])
             close-protected             (get-in @regions [key :close])
-            start-index-open-protected (index-of old-content open-protected)
-            end-index-open-protected   (+ start-index-open-protected (count open-protected))
+            start-index-open-protected  (index-of old-content open-protected)
+            end-index-open-protected    (+ start-index-open-protected (count open-protected))
             start-index-close-protected (index-of old-content close-protected)]
         (println open-protected)
         (println start-index-open-protected)
