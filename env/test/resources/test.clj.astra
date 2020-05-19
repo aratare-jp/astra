@@ -1,0 +1,10 @@
+testing testing testing {{ name }}
+
+{% protected "<!--" "-->" "bob foo bar baz" false false %}
+foo
+biz
+booeee
+baz
+{% end-protected %}
+
+hello world!!!

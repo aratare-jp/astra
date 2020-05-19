@@ -1,9 +1,9 @@
-(ns zues.utility
-  (:require [clojure.string :refer :all]))
+(ns astra.utility
+  (:require [clojure.string :refer [trim]]))
 
 (defn strip-double-quotes
   "Strip double quotes from both ends of the given string"
-  [s]
-  (let [trimmed (trim s)
+  [quoted-string]
+  (let [trimmed (trim quoted-string)
         len     (count trimmed)]
     (subs trimmed 1 (- len 1))))
