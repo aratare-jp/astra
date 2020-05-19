@@ -30,7 +30,10 @@ This brings us to this library. Built on Clojure from the ground up, it's meant 
 ## Features
 - [ ] N-meta models
 - [ ] Concrete models
-- [ ] Code templates
+- [ ] Templating language with
+  - [ ] Auto-completion
+  - [ ] Error checking
+  - [ ] IDE supporst (IntelliJ + VSCode)
 - [ ] Code generation
 
 ## License
