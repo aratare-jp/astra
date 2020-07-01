@@ -1,17 +1,17 @@
 import java.util.*;
 
-public class {% entityName %} {
+public class {{ entityName }} {
 	{% for prop in props %}
 	private {{ prop.dataType }} {{ prop.name }};
-	{% end for %}
+	{% endfor %}
 
-	public {% entityName %}(
+	public {{ entityName }}(
 	{% for prop in props %}
 			{{ prop.dataType }} {{ prop.name }},
-	{% end for %}) {
+	{% endfor %}) {
 	{% for prop in props %}
 		this.{{ prop.name }} = {{ prop.name }};
-	{% end for %}
+	{% endfor %}
 	}
 
 	{% protected import stuff here %}

@@ -14,7 +14,7 @@
                             :plugins        [[com.jakemccrary/lein-test-refresh "0.24.1"]
                                              [jonase/eastwood "0.3.5"]]}
              :test         {:source-paths   ["env/test"]
-                            :resource-paths ["env/test/resources"]
+                            :resource-paths ["test/resources" "env/test/resources"]
                             :dependencies   [[org.clojure/test.check "1.0.0"]
                                              [pjstadig/humane-test-output "0.10.0"]
                                              [orchestra "2019.02.06-1"]]

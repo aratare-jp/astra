@@ -6,5 +6,4 @@
     [astra.utility :refer :all])
   (:gen-class))
 
-(defn -main [& args]
-  (swap! first-run not))
+(defn -main [& args])
